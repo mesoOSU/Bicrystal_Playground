@@ -65,4 +65,4 @@ init_savename = "input.init"
 # ------------ Function that actually writes out the experiment ------------ #
 # ========================================================================== #
 
-fn.Create_Simulation('Experiment_01','initial_MS.init',dat,xdim,ydim)
+fn.Create_Simulation('Example','initial_MS.init',dat,xdim,ydim)

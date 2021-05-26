@@ -8,12 +8,6 @@ Just a file for holding extra functions. Makes the other scripts more compact
 """
 import glob,os,time,h5py,scipy,re
 import numpy as np
-import skimage.io as skio
-from skimage import measure
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-from transformations import rotation_matrix
-from stl import mesh
 
 
 
@@ -211,7 +205,7 @@ Slip_PhaseI		Cu_p_hard.sx
 
 # Elastic constants of phase 1: c11, c12, c44, nu
 # Gas, ignored!
-ElastConst_PhaseII	0.0	0.0	0.0	0.0
+ElastConst_PhaseII	162700.	119000.	71150.	0.35
 
 # Data file containing info of phase 2
 Slip_PhaseII	Cu_p_soft.sx
@@ -223,23 +217,20 @@ Slip_PhaseII	Cu_p_soft.sx
 # Flags for velocity gradient (0:unknown, 1:known) Voigt notation
 # 1 is where we are SETTING the velocity of the deformation
 # 0 is where we are letting the code solve for what the deformation should be
-#VelGrad_BC_Flag		0 0 1 1 1 1
-VelGrad_BC_Flag		0 0 1 0 0 0
+VelGrad_BC_Flag		0 0 0 0 0 1
 
 
 # Velocity gradient
-#VelGrad_BC		-0.3E-3 -0.3E-3  1.0E-3  0.0 0.0 0.0
-VelGrad_BC		0.0 0.0 1E-3 0.0 0.0 0.0
+VelGrad_BC		0.0 0.0 0.0 0.0 0.0 1E-3
 
 # Flags for Cauchy stress
 # 1 is where we are SETTING the stress boundary condition
 # 0 is where we are letting the code solve for what the stress should be
-Stress_BC_Flag		1 1 0 0 0 0
-Stress_BC_Flag		1 1 0 1 1 1
+Stress_BC_Flag		1 1 1 1 1 0
 
 # Applied Cauchy stress
 # Setting these to zero says no applied stress other than what 
-Stress_BC	 0. 0. 0. 0. 0. 0.
+Stress_BC	 1.0 1.0 1.0 1.0 1.0 1.0 
 
 # elasticity BC: 0 -(e_homo=0), 1 -(relaxed bc)
 ElastBC		1

@@ -1,0 +1,6 @@
+Simulations/*
+!Simulations/Example/*
+!Simulations/Example
+.spyproject
+__pycache__
+__pycache__

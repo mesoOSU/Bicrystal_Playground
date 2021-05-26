@@ -1,0 +1,7 @@
+Code for interactive Batch:
+sinteractive -N 1 -n 48 -p largemem -t 02:00:00 -A PAA0023 bigmem_Forge_Example
+Alternate for if the largemem nodes are taken/slow:
+sinteractive -N 2 -n 48 -p parallel -t 8:00:00 -A PAA0023 large_boi_Example
+
+Command for running forge (works for Austin anyway, may not for you):
+mpiexec ~/bin/forge/ ./input.in
